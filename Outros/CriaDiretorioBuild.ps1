@@ -51,8 +51,8 @@ if ($isfeature)
 } 
 
 
-Write-Host "Copiando para ...\dc01\Build\Globus\$dir\$BuildNumber\Sistemas"
+Write-Host "Copiando para ...\dc01\Build\_OUTROS_\$dir\$BuildNumber\Sistemas"
 Write-Host "  "
-Write-Host "Executando comando: Copy-Item $artifactstagingdirectory\Globus\Sistemas  \\dc01\Build\Globus\$dir\$BuildNumber\Sistemas -Recurse"
+Write-Host "Executando comando: Copy-Item $artifactstagingdirectory\_OUTROS_\Sistemas  \\dc01\Build\_OUTROS_\$dir\$BuildNumber\Sistemas -Recurse"
 
-Copy-Item $artifactstagingdirectory\Globus\Sistemas  \\dc01\Build\Globus\$dir\$BuildNumber\Sistemas -Recurse
+Copy-Item $artifactstagingdirectory\_OUTROS_\Sistemas  \\dc01\Build\_OUTROS_\$dir\$BuildNumber\Sistemas -Recurse

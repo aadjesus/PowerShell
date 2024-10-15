@@ -35,4 +35,4 @@ function ExecutaAspack($file)
 }
  
 
- AspackFiles("C:\BgmRodotec\GlobusMais\src\WPF\Distribuicao")
+ AspackFiles("C:\_OUTROS_EMP_\_OUTROS_Mais\src\WPF\Distribuicao")
