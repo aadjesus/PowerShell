@@ -27,7 +27,7 @@ $sistemas = (
     "CGS;CTE;Terceiros",
     "CGS;GRD;GGRisco",
     "CGS;CTE;Terceiros",
-    "CTR;GRP;GlobusReport",
+    "CTR;GRP;_OUTROS_Report",
     "CGS;CTE;Terceiros",
     "MAN;IGP;InfGeoPosicionamento",
     "MAN;MAN;Manutencao",
@@ -83,9 +83,9 @@ $sistemas = (
 $exclusoes = ("PRJ_PRODATA.EXE","BILHETAGEMELETRONICA.EXE")
 $compactarSemPasta = ("Coeficientes","Prj_Prodata")
 
-$pastaDLLs = "C:\BgmRodotec\Globus\src\Globus\Sistemas"
-$sDir = "\\dc01\Build\Globus\master\"
-[string]$sDirDest = "c:\Trabalho\ArquivosCompactados\Globus"
+$pastaDLLs = "C:\_OUTROS_EMP_\_OUTROS_\src\_OUTROS_\Sistemas"
+$sDir = "\\dc01\Build\_OUTROS_\master\"
+[string]$sDirDest = "c:\Trabalho\ArquivosCompactados\_OUTROS_"
 [string]$files = ""
 
 function Inicia() {    
@@ -93,7 +93,7 @@ function Inicia() {
     cls
     
     $folder = Get-ChildItem $sDir | where { $_.PSisContainer } | Sort CreationTime -Descending | Select -First 1
-    #$folder = "Globus_20161221.12"
+    #$folder = "_OUTROS__20161221.12"
 
     $sDir = $sDir + $folder
 
@@ -220,7 +220,7 @@ function CompactaArquivos() {
     if ($compactarSemPasta -contains $sigla) {
         Compress-Archive -Path "C:\Trabalho\ArquivosCompactados\$modulo" -DestinationPath "C:\Trabalho\ArquivosCompactados\$sigla.zip" -Force
     } else {        
-        Compress-Archive -Path "C:\Trabalho\ArquivosCompactados\Globus" -DestinationPath "C:\Trabalho\ArquivosCompactados\$sigla.zip" -Force
+        Compress-Archive -Path "C:\Trabalho\ArquivosCompactados\_OUTROS_" -DestinationPath "C:\Trabalho\ArquivosCompactados\$sigla.zip" -Force
     }
 }
 

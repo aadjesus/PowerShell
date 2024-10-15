@@ -1,5 +1,5 @@
-﻿$ori = "\\dc01\build\Globus\SIM_64495_BCO\Globus_20170105.25\";
-$dest = "C:\GlobuSSS\";
+﻿$ori = "\\dc01\build\_OUTROS_\SIM_64495_BCO\_OUTROS__20170105.25\";
+$dest = "C:\_OUTROS_SS\";
 
 $diretorios = Get-ChildItem -Force $ori;
 
