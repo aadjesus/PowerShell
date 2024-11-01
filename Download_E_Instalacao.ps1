@@ -16,19 +16,12 @@ function Downloads-Arquivo {
     )
 
     Write-Host "Download do arquivo: $pArquivo"
-    
-    # https://drive.google.com/file/d/1bYZEgqSvsT-Uh-1gIFqlK5YUrp4CmDp6/view?usp=sharing
-    
-    # https://drive.usercontent.google.com/u/0/uc?id=1bYZEgqSvsT-Uh-1gIFqlK5YUrp4CmDp6&export=download
-    $id = "1bYZEgqSvsT-Uh-1gIFqlK5YUrp4CmDp6";
-    $url = "https://drive.usercontent.google.com/u/0/uc?id=1bYZEgqSvsT-Uh-1gIFqlK5YUrp4CmDp6&export=download";
-    
-    #$id  = "1yXcHn1YLSJA_VmF9kjBP50NjzrwiL4hh"
-    #$url = "https://drive.google.com/drive/u/0/folders/$id"
-    #$downloadUrl = "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-    #$destination = "C:\Seu\Caminho\Destino\arquivo.pdf"
 
     $output = "$diretorioDownloads\$pArquivo.zip";
+
+    #https://drive.google.com/file/d/1Pa0hGERCkd7aHOxW9XOrD-mmxsCQumls/view?usp=drive_link
+    
+    $url = "https://drive.google.com/uc?export=download&id=1Pa0hGERCkd7aHOxW9XOrD-mmxsCQumls";
 
     $response = Invoke-WebRequest -Uri $url -OutFile $output;
 
@@ -52,3 +45,9 @@ function Instalar-Arquivo {
 
 $arquivo =  Downloads-Arquivo("aaa$xBits");
 Instalar-Arquivo($arquivo);
+
+#clear 
+#$achoRewriteModule = (Get-WebGlobalModule | Where-Object { $_.name -eq 'RewriteModule'  })
+#$achoIIsNode       = (Get-WebGlobalModule | Where-Object { $_.name -eq 'iisnode'  })
+#$achoRewriteModule
+#$achoIIsNode
