@@ -4,23 +4,39 @@ New-Item $Dir -type directory -force
 cd $Dir
 
 $lista = @(
-    "GlobusWeb.Acidentes",
-    "GlobusWeb.API.Delphi",
-    "GlobusWeb.Autenticacao",
-    "GlobusWeb.Comuns.Libraries",
-    "GlobusWeb.Controle",
-    "GlobusWeb.Folha",
-    "GlobusWeb.Frequencia",
-    "GlobusWeb.Frota",
-    "GlobusWeb.Gateway",
-    "GlobusWeb.Migration.GraphQl",
-    "GlobusWeb.UIKit");
+    'GlobusWeb.Acidentes',
+    'GlobusWeb.API.Delphi',
+    'GlobusWeb.Autenticacao',
+    'GlobusWeb.Cargas',
+    'GlobusWeb.Comuns.Libraries',
+    'GlobusWeb.ContasReceber',
+    'GlobusWeb.Controle',
+    'GlobusWeb.Escala',
+    'GlobusWeb.EscalaRodoviaria',
+    'GlobusWeb.Folha',
+    'GlobusWeb.Frequencia',
+    'GlobusWeb.Frota',
+    'GlobusWeb.Gateway',
+    'GlobusWeb.Migration.GraphQl',
+    'GlobusWeb.Portal',
+    'GlobusWeb.Trafego',
+    'GlobusWeb.UIKit');
 
 
 foreach ( $item in $lista )
 {
     Write-Host $item
     if (Test-Path $item) {
+		cd $item
+		
+		git checkout -b master
+		git push --force
+
+		git checkout -b develop
+		git push --force
+		
+		cd ..
+
         continue;
     }
 
