@@ -1,26 +1,36 @@
 ﻿clear
-$Dir = 'c:\praxio'
+$Dir = 'c:\Praxio\GlobusWeb'
 New-Item $Dir -type directory -force
 cd $Dir
 
 $lista = @(
     'GlobusWeb.Acidentes',
-    'GlobusWeb.API.Delphi',
-    'GlobusWeb.Autenticacao',
-    'GlobusWeb.Cargas',
-    'GlobusWeb.Comuns.Libraries',
-    'GlobusWeb.ContasReceber',
-    'GlobusWeb.Controle',
-    'GlobusWeb.Escala',
-    'GlobusWeb.EscalaRodoviaria',
-    'GlobusWeb.Folha',
-    'GlobusWeb.Frequencia',
-    'GlobusWeb.Frota',
-    'GlobusWeb.Gateway',
-    'GlobusWeb.Migration.GraphQl',
-    'GlobusWeb.Portal',
-    'GlobusWeb.Trafego',
-    'GlobusWeb.UIKit');
+	'GlobusWeb.API.Delphi',
+	'GlobusWeb.Arrecadacao',
+	'GlobusWeb.Autenticacao',
+	'GlobusWeb.Cargas',
+	'GlobusWeb.Comuns.Libraries',
+	'GlobusWeb.ContasPagar',
+	'GlobusWeb.ContasReceber',
+	'GlobusWeb.Controle',
+	'GlobusWeb.Demo',
+	'GlobusWeb.DVS',
+	'GlobusWeb.Escala',
+	'GlobusWeb.EscalaRodoviaria',
+	'GlobusWeb.Escrituracao',
+	'GlobusWeb.Estoque',
+	'GlobusWeb.Folha',
+	'GlobusWeb.Frequencia',
+	'GlobusWeb.Frota',
+	'GlobusWeb.Gateway',
+	'GlobusWeb.Migration.GraphQl',
+	'GlobusWeb.Plantao',
+	'GlobusWeb.Pneus',
+	'GlobusWeb.Portal',
+	'GlobusWeb.Retaguarda',
+	'GlobusWeb.Trafego',
+	'GlobusWeb.TRR',
+	'GlobusWeb.UIKit');
 
 
 foreach ( $item in $lista )
