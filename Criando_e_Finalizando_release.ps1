@@ -20,11 +20,13 @@
         git branch -d $teste.Trim()
     }
 
-    git flow release start "adequacaoNugets_$(Get-Date -Format "yyyyMMdd_HHmm")"
+    git flow release start "2024.Q4.S6_VERSAO"
     git flow publish
     
     if (($forcarVersaoEstavel)) {​​​​​​​
-      git tag -a v3.0 -m "setando branch para versao estavel"
+      git tag -a v2.0 -m "feat: Ajustando versão GitVersion #493565
+
+US #493564"
     }
     
     git flow finish
@@ -57,26 +59,15 @@
 #Executar-Release 'c:\Praxio\Fusea\Framework.Configuration' $true            --- gerou versao 3.1.0
 #Executar-Release 'c:\Praxio\Fusea\Framework.Database' $true                 --- gerou versao 3.0.0
 #Executar-Release 'c:\Praxio\Fusea\Framework.Platform.Client' $true          --- gerou versao 3.1.0
-Executar-Release 'c:\Praxio\Fusea\Framework.Logs' $true
-Executar-Release 'c:\Praxio\Fusea\Framework.Platform.Log' $true
-Executar-Release 'c:\Praxio\Fusea\Framework.Platform' $true
+#Executar-Release 'c:\Praxio\Fusea\Framework.Logs' $true
+#Executar-Release 'c:\Praxio\Fusea\Framework.Platform.Log' $true
+#Executar-Release 'c:\Praxio\Fusea\Framework.Platform' $true
 #Executar-Release 'c:\Praxio\Fusea\Framework.Platform.LibBase' $true         --- gerou versao 3.6.0
-Executar-Release 'c:\Praxio\Fusea\BgmRodotec.Arquivo' $true
-    # Client                                                                 --- ok 
-
-Executar-Release 'c:\Praxio\Fusea\BgmRodotec.Email' $true
-    # Client                                                                 ---ok
-
-Executar-Release 'c:\Praxio\Fusea\BgmRodotec.Endereco' $true
-    # Client                                                                 ---              
-
-Executar-Release 'c:\Praxio\Fusea\BgmRodotec.Notificacao' $true
-    # Client                                                                 -- ok
-     
-Executar-Release 'c:\Praxio\Fusea\BgmRodotec.Auth' $true
-    # Client                                                                 -- ok                     
-
-
+#Executar-Release 'c:\Praxio\Fusea\BgmRodotec.Arquivo' $true
+#Executar-Release 'c:\Praxio\Fusea\BgmRodotec.Email' $true
+#Executar-Release 'c:\Praxio\Fusea\BgmRodotec.Endereco' $true
+#Executar-Release 'c:\Praxio\Fusea\BgmRodotec.Notificacao' $true
+#Executar-Release 'c:\Praxio\Fusea\BgmRodotec.Auth' $true
 #Executar-Release 'c:\Praxio\Fusea\Framework.Database.Core' $true            --- ok
-#
-standard
+
+Executar-Release 'c:\Praxio\Praxio.SyncESFtoKMM' $true
