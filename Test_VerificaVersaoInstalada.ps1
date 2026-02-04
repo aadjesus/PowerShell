@@ -1,0 +1,14 @@
+﻿cls
+
+$Env:PATH_BASE            = 'Servers'
+$Env:PARENT_WEBSITE_PORTA = '80'
+$Env:AGENT_WORKFOLDER     = 'c:\azagent\A1\_work'
+
+$Env:RELEASE_ARTIFACTS_GLOBUSWEB_ACIDENTES_FRONT_END_DEFINITIONNAME = "GlobusWeb.Acidentes.Front.End"                     
+$Env:RELEASE_ARTIFACTS_GLOBUSWEB_ACIDENTES_FRONT_END_BUILDNUMBER    = "20250822.4"
+$Env:RELEASE_ARTIFACTS_GLOBUSWEB_ACIDENTES_FRONT_END_BUILDID        = 1
+
+$Env:FORCAR_ATUALIZACAO = "SIM1"
+$Env:IGNORAR_GLOBUSWEB_ACIDENTES_FRONT_END = "SIM"
+
+C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\VerificaVersaoInstalada.ps1 -NomeArtefato GlobusWeb.Acidentes.Front.End

@@ -21,7 +21,8 @@ function Downloads-Arquivo {
 
     #https://drive.google.com/file/d/1Pa0hGERCkd7aHOxW9XOrD-mmxsCQumls/view?usp=drive_link
     
-    $url = "https://drive.google.com/uc?export=download&id=1Pa0hGERCkd7aHOxW9XOrD-mmxsCQumls";
+    $url = "https://drive.google.com/uc?export=download&id=1AoyIJte1IR8lPLuQkbANoECN5SB2ATPz";
+                                                           #1Pa0hGERCkd7aHOxW9XOrD-mmxsCQumls
 
     $response = Invoke-WebRequest -Uri $url -OutFile $output;
 
@@ -44,7 +45,7 @@ function Instalar-Arquivo {
 }
 
 $arquivo =  Downloads-Arquivo("aaa$xBits");
-Instalar-Arquivo($arquivo);
+#Instalar-Arquivo($arquivo);
 
 #clear 
 #$achoRewriteModule = (Get-WebGlobalModule | Where-Object { $_.name -eq 'RewriteModule'  })

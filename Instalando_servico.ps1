@@ -96,3 +96,7 @@ $x1
 #$service = Get-Service $nome
 #$service
 #sc.exe delete $service
+
+definir descricao
+$description = "Agente de Deployment Group para o projeto Desenvolvimento - Criado via Automação em $(Get-Date -Format 'dd/MM/yyyy')"
+sc.exe description 'vstsagent.praxio.AmbienteDevAle.AAUGUSTO' "$description"
