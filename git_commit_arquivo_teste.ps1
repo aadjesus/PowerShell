@@ -18,7 +18,7 @@ Get-ChildItem -Path $diretorio -Filter $nomeArquivo -Recurse -ErrorAction Silent
         Write-Error $_.Exception.Message
     } finally {
         $guid = [guid]::NewGuid().Guid
-        $arquivoLog = "C:\DestinationFolder\$($_.Name)_$($guid).txt"
+        $arquivoLog = "C:\DestinationFolder\$($_.Directory.BaseName)_$($guid).txt"
 
         New-Item -Path $arquivoLog -ItemType "File"
         Add-Content -Path $arquivoLog -Value "$($data) -- $(New-Guid)"  
