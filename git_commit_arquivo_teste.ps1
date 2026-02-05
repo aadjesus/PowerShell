@@ -1,4 +1,5 @@
 ﻿clear
+
 $diretorio   = 'd:\GitHub\'
 $nomeArquivo = 'teste.txt'
 $data        = Get-Date
@@ -7,7 +8,8 @@ Get-ChildItem -Path $diretorio -Filter $nomeArquivo -Recurse -ErrorAction Silent
     Write-Host "$($_.Directory): " -ForegroundColor Green
 
     try {       
-        Add-Content -Path $_.FullName -Value $data       
+        Add-Content -Path $_.FullName -Value "$($data) -- $(New-Guid)"  
+            
         cd $_.Directory
 	    git add .	
 	    git commit -m "Atualizando arquivos"
