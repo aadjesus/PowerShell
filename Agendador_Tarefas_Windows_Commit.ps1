@@ -1,17 +1,9 @@
-﻿cls
-
-$pathScript = "d:\GitHub\PowerShell\git_commit_arquivo_teste.ps1"
-
-$action = New-ScheduledTaskAction `
-    -Execute "powershell.exe" `
-    -Argument "-ExecutionPolicy Bypass -File $pathScript"
-
-$agora = Get-Date
+﻿$agora      = Get-Date
 $limiteHoje = Get-Date -Hour 20 -Minute 0 -Second 0
 $quantidade = Get-Random -Minimum 2 -Maximum 6
 
-$triggers = @()
 
+$triggers   = @()
 for ($i = 1; $i -le $quantidade; $i++) {
     $segundosRestantes = ($limiteHoje - $agora).TotalSeconds
     
@@ -31,18 +23,19 @@ for ($i = 1; $i -le $quantidade; $i++) {
 }
 
 if ($triggers.Count -gt 0) {
+	$action = New-ScheduledTaskAction `
+		-Execute "powershell.exe" `
+		-Argument "-WindowStyle Hidden -ExecutionPolicy Bypass -File d:\GitHub\PowerShell\git_commit_arquivo_teste.ps1"
+
     $settings = New-ScheduledTaskSettingsSet `
         -DeleteExpiredTaskAfter (New-TimeSpan -Seconds 0)
-
+    $guid = [guid]::NewGuid().Guid
+    $taskName = "ALE - Commit automatico - $guid"
     Register-ScheduledTask `
-        -TaskName "ALE - Commit automatico" `
+        -TaskName $taskName `
         -Action $action `
         -Trigger $triggers `
         -Settings $settings `
         -User "SYSTEM" `
         -Force
-    
-    Write-Host "$($triggers.Count) execuções agendadas para hoje até às 18:00."
-} else {
-    Write-Warning "Não há tempo hábil para agendar execuções antes das 18:00 hoje."
 }
