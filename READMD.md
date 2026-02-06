@@ -1,12 +1,18 @@
 # Repositorio com script powershell diversos
 
-## Resumo IA
-O texto fornecido é uma cabeçalho de título que indica: **"Repositório com scripts PowerShell diversos"**.
-
-Em resumo, este é um **repositório que contém uma coleção variada de scripts escritos em PowerShell**. Isso significa que o local serve como um arquivo ou biblioteca de diferentes ferramentas e rotinas de automação desenvolvidas na linguagem PowerShell.
 
 
-## Resumo IA
-Este texto descreve um repositório que centraliza uma coleção variada de scripts PowerShell. Ele funciona como uma biblioteca ou arquivo de diferentes ferramentas e rotinas de automação, todas desenvolvidas na linguagem PowerShell.
+## Resumo IA: 02/05/2026 18:36:28
+Dica PowerShell: Sempre pense em *objetos*, não em texto! 💡 O pipeline (`|`) envia objetos estruturados e ricos em propriedades. Use `Get-Member` para explorar o que está disponível. Isso é a chave para filtrar, selecionar e manipular dados com poder! #PowerShell
 
-O termo "diversos" enfatiza a abrangência e multiplicidade das funcionalidades oferecidas pelos scripts, tornando-o um recurso útil para diversas necessidades de automação e gerenciamento de sistemas. Em essência, é um local para encontrar e utilizar soluções PowerShell prontas para diferentes propósitos.
+
+## Resumo IA: 02/05/2026 18:37:16
+Aprenda PowerShell rapidamente: use `Get-Help <Cmdlet> -Full` ou `-Online` para ver exemplos, descrições e parâmetros. É a sua documentação interativa para dominar qualquer comando e entender seu funcionamento a fundo. Não subestime o poder da autoajuda!
+
+
+## Dica: 02/05/2026 18:40:19
+Dica PowerShell: Não adivinhe as propriedades de um objeto. Envie-o para `Get-Member` para ver todos os seus métodos e propriedades. Fundamental para scripts precisos e manipulação eficiente de dados. #PowerShell
+
+
+## Dica: 02/05/2026 18:41:07
+Dica de especialista PowerShell: Filtre à esquerda. Minimize o volume de dados processados desde o início. Aplique `Where-Object` o mais cedo possível no pipeline. Aumenta a performance e reduz o tráfego de rede, especialmente com fontes remotas. #PowerShell
