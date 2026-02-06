@@ -34,6 +34,8 @@ try {
         } catch {
             Write-Error $_.Exception.Message
         }
+
+        Write-Host "**********************"
     } 
 } catch {
     Write-Error "Erro: $_"
