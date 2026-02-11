@@ -11,9 +11,10 @@ if (-not (Test-Path "$destino\Oracle.ManagedDataAccess.dll")) {
 
 
 
-$Env:PATH_DESTINO = "c:\Praxio\GlobusWeb"
+$Env:PATH_DESTINO = "c:\Servers\GlobusWeb\"
 
 $Env:IGNORAR_CONEXAO_BANCO           = $true1
 $Env:VALIDAR_ATUALIZACAO_AUTOMATICA  = $true
+$Env:IGNORAR_ATUALIZACAO_AUTOMATICA  = $true1
 
 C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\ValidarConexaoBanco.ps1
