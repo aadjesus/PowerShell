@@ -19,8 +19,6 @@ $Env:TESTE_123_IGNORAR_CONEXAO_BANCO           = 0
 $Env:IGNORAR_CONEXAO_BANCO           = $true1
 
 
-
-$Env:VALIDAR_ATUALIZACAO_AUTOMATICA  = $true
 $Env:IGNORAR_ATUALIZACAO_AUTOMATICA  = $true1
 
 C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\ValidarConexaoBanco.ps1
