@@ -1,7 +1,7 @@
 ﻿cls
 
 $baseUrl        = "https://dev.azure.com/praxio/Desenvolvimento/_apis/build"
-$branchName     = "refs/heads/master"
+$branchName     = "refs/heads/develop"
 $token          = [Environment]::GetEnvironmentVariable("XXXXXXXX", "User")
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(":$token"))
 $headers        = @{ Authorization = "Basic $base64AuthInfo" }
