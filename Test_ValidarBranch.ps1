@@ -16,5 +16,8 @@ $Env:AGENT_DEPLOYMENTGROUPID            = 540
 $Env:AGENT_MACHINENAME                  = "AAUGUSTO"
 $Env:AGENT_NAME                         = "AAUGUSTO"
 
+#$Env:AGENT_MACHINENAME                  = "PRXGLBWEB"
+#$Env:AGENT_NAME                         = "PRXGLBWEB"
+
 C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\ValidarBranch.ps1
 
