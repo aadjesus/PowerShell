@@ -10,4 +10,8 @@ $Env:SYSTEM_TASKDEFINITIONSURI      = "https://dev.azure.com/praxio/"
 $Env:SYSTEM_TEAMPROJECTID           = "f7e1f0f0-eca6-49ed-89c4-b580797f7a63"
 $Env:SYSTEM_TEAMPROJECT             = "Desenvolvimento"
 
-#C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\DownloadBuild.ps1 -nomeArtefato NOME
+
+$Env:RELEASE_ARTIFACTS_GLOBUSWEB_ABASTECIMENTO_BACK_END_DEFINITIONID = 878
+$nomeArtefato = "GLOBUSWEB_ABASTECIMENTO_BACK_END"
+
+C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\DownloadBuild.ps1 -nomeArtefato $nomeArtefato
