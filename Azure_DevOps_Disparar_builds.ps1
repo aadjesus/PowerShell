@@ -40,8 +40,8 @@ foreach ($item in $pipelines) {
     } | ConvertTo-Json -Depth 10
 
     
-    $url = "$baseUrl/_apis/pipelines/$($item.id)/runs?api-version=7.1"
-    $response = Invoke-RestMethod -Uri $url -Headers $headers  -Method Post -Body $body
+    #$url = "$baseUrl/_apis/pipelines/$($item.id)/runs?api-version=7.1"
+    #$response = Invoke-RestMethod -Uri $url -Headers $headers  -Method Post -Body $body
     Write-Host " └── Build: $($response.name)"
 
   } catch {
