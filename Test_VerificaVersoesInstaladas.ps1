@@ -19,10 +19,10 @@ $Env:RELEASE_ARTIFACTS_GlobusWeb_Gateway_Front_End_BUILDNUMBER    =  "20260211.1
 $Env:RELEASE_ARTIFACTS_GlobusWeb_Gateway_Back_End_BUILDNUMBER     =  "20260212.21"
 
 
-$Env:PATH_BASE = "Servers"
+$Env:PATH_BASE            = "Servers"
 $Env:PORTA_PARENT_WEBSITE = "80"
-$Env:AGENT_WORKFOLDER = "c:\azagent\A1\_work\"
-$Env:FORCAR_ATUALIZACAO = 11
+$Env:AGENT_WORKFOLDER     = "c:\azagent\A1\_work\"
+$Env:FORCAR_ATUALIZACAO   = 11
 
 #$Env:IGNORAR_GlobusWeb_Acidentes_Back_End  = $null
 #$Env:IGNORAR_GlobusWeb_Acidentes_Front_End = $null
