@@ -40,9 +40,11 @@ foreach ($item in $pipelines) {
     } | ConvertTo-Json -Depth 10
 
     
-    #$url = "$baseUrl/_apis/pipelines/$($item.id)/runs?api-version=7.1"
-    #$response = Invoke-RestMethod -Uri $url -Headers $headers  -Method Post -Body $body
-    Write-Host " └── Build: $($response.name)"
+    #if ($item.name -eq "GlobusWeb.Abastecimento.Back.End") {
+        $url = "$baseUrl/_apis/pipelines/$($item.id)/runs?api-version=7.1"
+        $response = Invoke-RestMethod -Uri $url -Headers $headers  -Method Post -Body $body
+        Write-Host " └── Build: $($response.name)"
+    #}
 
   } catch {
       Write-Host " └── Erro: $($_.Exception.Message)"
