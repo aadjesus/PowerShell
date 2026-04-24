@@ -75,6 +75,6 @@ foreach ($item in $diretorios) {
 
 }
 
-
+cd $Env:PATH_DESTINO
 Write-Host "`nProcesso concluído.`nVerifique o log em $arquivoLog para detalhes." -ForegroundColor Green
 Stop-Transcript
