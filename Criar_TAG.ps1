@@ -9,8 +9,8 @@ $arquivoLog  = "$Env:PATH_DESTINO\GlobusWeb_Log_Git_$(Get-Date -Format 'yyyyMMdd
 Start-Transcript -Path $arquivoLog -Append	
 
 
-$VERSION      = "1.0.0"
-$RELEASE_NAME = "2025.Q4.S6"
+$VERSION      = "2.0.0"
+$RELEASE_NAME = "2026.Q2.S1"
 $MESSAGE      = "$($RELEASE_NAME)
 
 Task: #574220
@@ -47,26 +47,26 @@ foreach ($item in $diretorios) {
         Exec-Git "git checkout develop"
         Exec-Git "git pull origin develop"
         
-        Write-Host "Iniciando Git Flow Release: $RELEASE_NAME" -ForegroundColor Yellow
-        Exec-Git "git flow release start $RELEASE_NAME"
-        
-        Write-Host "Tagueando versão $VERSION" -ForegroundColor Yellow
-        Exec-Git "git tag -a $VERSION -m '$MESSAGE'"
-        
-        
-        Write-Host "Finalizando merges locais..." -ForegroundColor Yellow
-        $env:GIT_MERGE_AUTOEDIT = "no"
-        Exec-Git "git flow release finish -n $RELEASE_NAME"
-        $env:GIT_MERGE_AUTOEDIT = $null
-
-        Write-Host "Enviando alterações para o Azure DevOps..." -ForegroundColor Green
-        Exec-Git "git checkout master"
-        Exec-Git "git push origin master"
-
-        Exec-Git "git checkout develop"
-        Exec-Git "git push origin develop"
-
-        Exec-Git "git push origin --tags"
+        # Write-Host "Iniciando Git Flow Release: $RELEASE_NAME" -ForegroundColor Yellow
+        # Exec-Git "git flow release start $RELEASE_NAME"
+        # 
+        # Write-Host "Tagueando versão $VERSION" -ForegroundColor Yellow
+        # Exec-Git "git tag -a $VERSION -m '$MESSAGE'"
+        # 
+        # 
+        # Write-Host "Finalizando merges locais..." -ForegroundColor Yellow
+        # $env:GIT_MERGE_AUTOEDIT = "no"
+        # Exec-Git "git flow release finish -n $RELEASE_NAME"
+        # $env:GIT_MERGE_AUTOEDIT = $null
+		# 
+        # Write-Host "Enviando alterações para o Azure DevOps..." -ForegroundColor Green
+        # Exec-Git "git checkout master"
+        # Exec-Git "git push origin master"
+		# 
+        # Exec-Git "git checkout develop"
+        # Exec-Git "git push origin develop"
+		# 
+        # Exec-Git "git push origin --tags"
         
     } catch {
         Write-Host "Erro: $item`n$_" -ForegroundColor Red
