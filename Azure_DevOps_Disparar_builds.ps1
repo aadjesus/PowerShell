@@ -50,4 +50,3 @@ foreach ($item in $pipelines) {
       Write-Host " └── Erro: $($_.Exception.Message)"
   }
 }
-

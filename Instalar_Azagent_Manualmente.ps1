@@ -9,3 +9,4 @@
 
 New-Service -Name "Praxio-Azure DevOps" -Description "Conecta a maquina com o Azure DevOps da https://dev.azure.com/praxio" -StartupType "Automatic" -BinaryPathName c:\azagent\A1\bin\AgentService.exe
 
+c:\azagent\A1\
