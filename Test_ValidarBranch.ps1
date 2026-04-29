@@ -19,7 +19,7 @@ $Env:AGENT_MACHINENAME                  = "AAUGUSTO"
 $Env:AGENT_NAME                         = "AAUGUSTO"
 $Env:RELEASE_RELEASEDESCRIPTION        = "c"
 
-$Env:IGNORAR_VALIDAR_BRANCH = $null
+$Env:IGNORAR_VALIDAR_BRANCH = $true
 $Env:INSTALAR_DEVELOP_EM_PRODUCAO = "false"
 #$Env:AGENT_MACHINENAME                  = "PRXGLBWEB"
 #$Env:AGENT_NAME                         = "PRXGLBWEB"
