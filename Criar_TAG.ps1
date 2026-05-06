@@ -48,8 +48,8 @@ foreach ($item in $diretorios) {
         Exec-Git "git checkout develop"
         Exec-Git "git pull origin develop"
         
-        Write-Host "`nCriando Branch Release: $RELEASE_NAME" -ForegroundColor Yellow
-        Exec-Git "git flow release start $RELEASE_NAME"
+        #Write-Host "`nCriando Branch Release: $RELEASE_NAME" -ForegroundColor Yellow
+        #Exec-Git "git flow release start $RELEASE_NAME"
         
         #Write-Host "`nCriando TAG: $VERSION" -ForegroundColor Yellow
         #Exec-Git "git tag -a $VERSION -m '$MESSAGE'"        
