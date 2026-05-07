@@ -1,8 +1,9 @@
 ﻿cls
 
 $basePath = "c:\azagent\A1\_work"
-$origem   = "c:\Praxio\GlobusWeb\GlobusWeb.Setup\DLLs\Oracle.ManagedDataAccess.dll"
+$origem   = "c:\Praxio\GlobusWeb\GlobusWeb.Setup\DLLs\*"
 $destino  = "$basePath\_GlobusWeb\DLLs"
+
 if (-not (Test-Path "$destino\Oracle.ManagedDataAccess.dll")) { 
     New-Item -Path $destino -ItemType Directory -ErrorAction SilentlyContinue | Out-Null
     Copy-Item $origem -Destination $destino -ErrorAction SilentlyContinue

@@ -2,7 +2,8 @@
 
 $Env:RELEASE_ENVIRONMENTNAME    = "QA"
 $Env:RELEASE_ENVIRONMENTNAME    = "Cana"
-$Env:BUILD_SOURCEBRANCHNAME     = "Develop"
+$Env:RELEASE_ENVIRONMENTNAME    = "Dir"
+$Env:BUILD_SOURCEBRANCHNAME     = "master"
 $Env:RELEASE_RELEASEDESCRIPTION = ""
 $Env:SYSTEM_ACCESSTOKEN         = [Environment]::GetEnvironmentVariable("XXXXXXXX", "User")
 
@@ -17,9 +18,9 @@ $Env:SYSTEM_TEAMPROJECT                 = "f7e1f0f0-eca6-49ed-89c4-b580797f7a63"
 $Env:AGENT_DEPLOYMENTGROUPID            = 540
 $Env:AGENT_MACHINENAME                  = "AAUGUSTO"
 $Env:AGENT_NAME                         = "AAUGUSTO"
-$Env:RELEASE_RELEASEDESCRIPTION        = "c"
+$Env:RELEASE_RELEASEDESCRIPTION        = "aaaa"
 
-$Env:IGNORAR_VALIDAR_BRANCH = $true
+$Env:IGNORAR_VALIDAR_BRANCH = $true1
 $Env:INSTALAR_DEVELOP_EM_PRODUCAO = "false"
 #$Env:AGENT_MACHINENAME                  = "PRXGLBWEB"
 #$Env:AGENT_NAME                         = "PRXGLBWEB"
