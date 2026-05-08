@@ -1,10 +1,10 @@
 ﻿cls
 
 $Env:RELEASE_ENVIRONMENTNAME    = "QA"
-$Env:RELEASE_ENVIRONMENTNAME    = "Canario"
-$Env:RELEASE_ENVIRONMENTNAME    = "Dir"
+#$Env:RELEASE_ENVIRONMENTNAME    = "Canario"
+#$Env:RELEASE_ENVIRONMENTNAME    = "Dir"
 $Env:BUILD_SOURCEBRANCHNAME     = "master"
-#$Env:BUILD_SOURCEBRANCHNAME     = "develo"
+$Env:BUILD_SOURCEBRANCHNAME     = "develo"
 $Env:RELEASE_RELEASEDESCRIPTION = ""
 $Env:SYSTEM_ACCESSTOKEN         = [Environment]::GetEnvironmentVariable("XXXXXXXX", "User")
 

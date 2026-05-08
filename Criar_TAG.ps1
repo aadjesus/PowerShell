@@ -1,4 +1,40 @@
 ﻿cls
+function Get-Cancelar {
+    param (        
+	    [string]$valor
+	)
+
+	if ([string]::IsNullOrEmpty($valor)) {
+		Write-Host "`nOperação cancelada." -ForegroundColor Red
+		return $true
+	}
+	return $false 
+}
+
+#$RELEASE_NAME = "2026.Q2.S2"
+Write-Host "`nInforme os dados ou" -NoNewline 
+Write-Host " ENTER " -NoNewline -ForegroundColor Red
+Write-Host "para cancelar:"
+
+$VERSION = Read-Host -Prompt "`nNumero versão"      # 2.0.0
+if ((Get-Cancelar -valor $VERSION)) {
+	return
+}
+$RELEASE_NAME = Read-Host -Prompt "Nome da Release"
+if ((Get-Cancelar -valor $RELEASE_NAME)) {
+	return
+}
+$US = Read-Host -Prompt "Numero US"
+if ((Get-Cancelar -valor $US)) {
+	return
+}
+
+$MESSAGE = "$($RELEASE_NAME), US: #$($US)"
+
+$ok = Read-Host -Prompt "`nMensagem Tag:`n$($MESSAGE)`n`nDigite algo para continuar"
+if ((Get-Cancelar -valor $ok)) {
+	return
+}
 
 $Env:PATH_DESTINO = [Environment]::GetEnvironmentVariable("GLOBUSWEB_DEV_PATH", "User")
 if ($Env:PATH_DESTINO) {
@@ -8,18 +44,10 @@ if ($Env:PATH_DESTINO) {
 $arquivoLog  = "$Env:PATH_DESTINO\GlobusWeb_Log_Git_$(Get-Date -Format 'yyyyMMdd_HHmmss').txt"
 Start-Transcript -Path $arquivoLog -Append	
 
-
-$VERSION      = "2.0.0"
-$RELEASE_NAME = "2026.Q2.S2"
-$MESSAGE      = "$($RELEASE_NAME)
-
-Task: #574220
-US: #574219"
-
 $diretorios = Get-ChildItem -Path . -Directory | 
 	Where-Object { 
-		$_.Name -match 'GlobusWeb.UIKit' -and                       # $_.Name -match 'GlobusWeb.*' -and
-        $_.FullName -notmatch '(Tools|Setup)' } |         # $_.FullName -notmatch '(UIKit|Tools|Setup)' } | 
+		$_.Name -match 'GlobusWeb.*' -and
+        $_.FullName -notmatch '(UIKit|Tools|Setup)' } | 
 	Select-Object FullName 
 
 function Exec-Git {
@@ -48,8 +76,8 @@ foreach ($item in $diretorios) {
         #Exec-Git "git checkout develop"
         #Exec-Git "git pull origin develop"
         
-        Write-Host "`nCriando Branch Release: $RELEASE_NAME" -ForegroundColor Yellow
-        Exec-Git "git flow release start $RELEASE_NAME"
+        #Write-Host "`nCriando Branch Release: $RELEASE_NAME" -ForegroundColor Yellow
+        #Exec-Git "git flow release start $RELEASE_NAME"
         
         #Write-Host "`nCriando TAG: $VERSION" -ForegroundColor Yellow
         #Exec-Git "git tag -a $VERSION -m '$MESSAGE'"        
