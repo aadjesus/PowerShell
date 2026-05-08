@@ -1,9 +1,10 @@
 ﻿cls
 
 $Env:RELEASE_ENVIRONMENTNAME    = "QA"
-#$Env:RELEASE_ENVIRONMENTNAME    = "Cana"
-#$Env:RELEASE_ENVIRONMENTNAME    = "Dir"
+$Env:RELEASE_ENVIRONMENTNAME    = "Canario"
+$Env:RELEASE_ENVIRONMENTNAME    = "Dir"
 $Env:BUILD_SOURCEBRANCHNAME     = "master"
+#$Env:BUILD_SOURCEBRANCHNAME     = "develo"
 $Env:RELEASE_RELEASEDESCRIPTION = ""
 $Env:SYSTEM_ACCESSTOKEN         = [Environment]::GetEnvironmentVariable("XXXXXXXX", "User")
 
@@ -13,14 +14,14 @@ $Env:SYSTEM_TEAMPROJECTID           = "f7e1f0f0-eca6-49ed-89c4-b580797f7a63"
 $Env:RELEASE_RELEASEID              = 85499
 $Env:RELEASE_ENVIRONMENTID          = 118288
 
-$Env:RELEASE_RELEASEID       = 87074
-$Env:RELEASE_ENVIRONMENTID   = 123134
+$Env:RELEASE_RELEASEID       = 87081
+$Env:RELEASE_ENVIRONMENTID   = 123155
 
 $Env:SYSTEM_TASKDEFINITIONSURI = "https://dev.azure.com/praxio/"
 $Env:SYSTEM_TEAMPROJECT                 = "f7e1f0f0-eca6-49ed-89c4-b580797f7a63"
 $Env:AGENT_DEPLOYMENTGROUPID            = 540
-$Env:AGENT_MACHINENAME                  = "AAUGUSTO"
-$Env:AGENT_NAME                         = "AAUGUSTO"
+$Env:AGENT_MACHINENAME                  = "AAUGUSTO2"
+$Env:AGENT_NAME                         = "AAUGUSTO1"
 $Env:RELEASE_RELEASEDESCRIPTION        = "aaaa"
 
 $Env:IGNORAR_VALIDAR_BRANCH = $true1

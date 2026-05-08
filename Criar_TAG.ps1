@@ -18,8 +18,8 @@ US: #574219"
 
 $diretorios = Get-ChildItem -Path . -Directory | 
 	Where-Object { 
-		$_.Name -match 'GlobusWeb.*' -and
-        $_.FullName -notmatch '(UIKit|Tools|Setup)' } |
+		$_.Name -match 'GlobusWeb.UIKit' -and                       # $_.Name -match 'GlobusWeb.*' -and
+        $_.FullName -notmatch '(Tools|Setup)' } |         # $_.FullName -notmatch '(UIKit|Tools|Setup)' } | 
 	Select-Object FullName 
 
 function Exec-Git {
@@ -40,16 +40,16 @@ foreach ($item in $diretorios) {
     try {
         cd $item.FullName
         
-        Write-Host "`nBranch: maste" -ForegroundColor Yellow
-        Exec-Git "git checkout master"
-        Exec-Git "git pull origin master"
+        #Write-Host "`nBranch: maste" -ForegroundColor Yellow
+        #Exec-Git "git checkout master"
+        #Exec-Git "git pull origin master"
+        #
+        #Write-Host "`nBranch: develop" -ForegroundColor Yellow
+        #Exec-Git "git checkout develop"
+        #Exec-Git "git pull origin develop"
         
-        Write-Host "`nBranch: develop" -ForegroundColor Yellow
-        Exec-Git "git checkout develop"
-        Exec-Git "git pull origin develop"
-        
-        #Write-Host "`nCriando Branch Release: $RELEASE_NAME" -ForegroundColor Yellow
-        #Exec-Git "git flow release start $RELEASE_NAME"
+        Write-Host "`nCriando Branch Release: $RELEASE_NAME" -ForegroundColor Yellow
+        Exec-Git "git flow release start $RELEASE_NAME"
         
         #Write-Host "`nCriando TAG: $VERSION" -ForegroundColor Yellow
         #Exec-Git "git tag -a $VERSION -m '$MESSAGE'"        
