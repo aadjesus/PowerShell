@@ -2,18 +2,18 @@
 
 $Env:FTP_URL     = 'ftp://atualizacao.praxio.com.br/ftp/GlobusWeb'
 $Env:FTP_USUARIO = 'prxftp'
-$Env:FTP_SENHA   = 'Prx##2025'
+$Env:FTP_SENHA   = '081011611232039304040565055605870628'
 
 
 $Env:AGENT_WORKFOLDER    = "c:\azagent\A1\_work"
-$Env:PATH_DESTINO        = "c:\Praxio\AmbienteDev\GlobusWeb"
+$Env:PATH_DESTINO        = "c:\temp\xxxx"
 $Env:AGENT_TEMPDIRECTORY = $ENV:TEMP
 $Env:AGENT_TEMPDIRECTORY = "c:\temp\xxxx\"
 
-$Env:IGNORAR_NODE_MODULES            = $True
+$Env:IGNORAR_NODE_MODULES            = $True1
 $Env:FORCAR_ATUALIZACAO_NODE_MODULES = $True
 
-$Env:IGNORAR__CLIENTORACLE            = $True
+$Env:IGNORAR__CLIENTORACLE            = $True1
 $Env:FORCAR_ATUALIZACAO__CLIENTORACLE = $True
 
 
