@@ -3,8 +3,8 @@
 
 $ENV:SYSTEM_TEAMFOUNDATIONSERVERURI = "https://vsrm.dev.azure.com/praxio/"
 $ENV:SYSTEM_TEAMPROJECT             = "Desenvolvimento"
-$Env:RELEASE_RELEASEID              = "87529"
-$Env:TAG_BRANCH                     = "Testet" 
+$Env:RELEASE_RELEASEID              = "87599"
+$Env:TAG_BRANCH                     = "breno.rocha" 
 $Env:SYSTEM_ACCESSTOKEN             = [Environment]::GetEnvironmentVariable("XXXXXXXX", "User")
 
 

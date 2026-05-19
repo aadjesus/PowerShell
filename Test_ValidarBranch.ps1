@@ -1,7 +1,7 @@
 ﻿cls
 
 $Env:RELEASE_ENVIRONMENTNAME    = "QA"
-$Env:RELEASE_ENVIRONMENTNAME    = "Canario"
+#$Env:RELEASE_ENVIRONMENTNAME    = "Canario"
 #$Env:RELEASE_ENVIRONMENTNAME    = "Dir"
 $Env:BUILD_SOURCEBRANCHNAME     = "master"
 $Env:BUILD_SOURCEBRANCHNAME     = "develo"
@@ -21,10 +21,10 @@ $Env:SYSTEM_TASKDEFINITIONSURI = "https://dev.azure.com/praxio/"
 $Env:SYSTEM_TEAMPROJECT                 = "f7e1f0f0-eca6-49ed-89c4-b580797f7a63"
 $Env:AGENT_DEPLOYMENTGROUPID            = 540
 $Env:AGENT_MACHINENAME                  = "AAUGUSTO"
-$Env:RELEASE_RELEASEDESCRIPTION        = "aaaa"
+$Env:AGENT_MACHINENAME                  = "BRENOROCHA"
 
 $Env:IGNORAR_VALIDAR_BRANCH = $true1
-$Env:INSTALAR_DEVELOP_EM_PRODUCAO = "false"
+
 #$Env:AGENT_MACHINENAME                  = "PRXGLBWEB"
 #$Env:AGENT_NAME                         = "PRXGLBWEB"
 
