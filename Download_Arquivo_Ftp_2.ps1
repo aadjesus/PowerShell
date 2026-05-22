@@ -3,7 +3,7 @@
 $Env:FTP_URL             = 'ftp://atualizacao.praxio.com.br/ftp/GlobusWeb'  # <- aqui troca ftps:// por ftp://
 $Env:AGENT_TEMPDIRECTORY = 'c:\temp'
 $Env:FTP_USUARIO          = 'prxftp'
-$Env:FTP_SENHA            = '#'
+$Env:FTP_SENHA            = 'Prx##2025'
 
 
 $arquivo = 'ClientOracle.zip'
