@@ -7,3 +7,6 @@ $Env:SYSTEM_TASKDEFINITIONSURI = "https://dev.azure.com/praxio/"
 $Env:SYSTEM_ACCESSTOKEN        = [Environment]::GetEnvironmentVariable("XXXXXXXX", "User")
 
 C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\VerificaVersoesInstaladas.ps1
+
+#https://dev.azure.com/praxio/Desenvolvimento/_apis/build/builds?tagFilters=GlobusWeb,develop&statusFilter=completed&resultFilter=succeeded&queryOrder=finishTimeDescending=1&api-version=7.1
+#https://dev.azure.com/praxio/Desenvolvimento/_apis/build/builds?tagFilters=GlobusWeb,develop&statusFilter=completed&resultFilter=succeeded&queryOrder=finishTimeDescending=1&api-version=7.1
