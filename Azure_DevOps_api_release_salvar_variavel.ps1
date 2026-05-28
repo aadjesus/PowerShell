@@ -37,6 +37,7 @@ Write-Host "Procurando Pipelines com as tags: $($tags)"
 
 $url = "$($env:SYSTEM_TEAMFOUNDATIONSERVERURI)$env:SYSTEM_TEAMPROJECT/_apis/Release/releases/$($env:RELEASE_RELEASEID)?api-version=7.1"
 
+
 Write-Host "Restaurando release"
 $release = Invoke-RestMethod -Uri $url -Method Get -Headers $headers
 $release.variables | Add-Member -MemberType NoteProperty -Name JsonPipelines -Value @{ value = $jsonPipelines } -Force
