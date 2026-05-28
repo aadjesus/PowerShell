@@ -11,22 +11,21 @@ $Env:SYSTEM_ACCESSTOKEN         = [Environment]::GetEnvironmentVariable("XXXXXXX
 
 $Env:SYSTEM_TEAMFOUNDATIONSERVERURI = "https://vsrm.dev.azure.com/praxio/"
 $Env:SYSTEM_TEAMPROJECTID           = "f7e1f0f0-eca6-49ed-89c4-b580797f7a63"
-$Env:RELEASE_RELEASEID              = 85499
-$Env:RELEASE_ENVIRONMENTID          = 118288
+$Env:RELEASE_RELEASEID              = 87943
+$Env:RELEASE_ENVIRONMENTID          = 125435
 
-$Env:RELEASE_RELEASEID       = 87179
-$Env:RELEASE_ENVIRONMENTID   = 123414
+$Env:RELEASE_RELEASEID       = 87943
+$Env:RELEASE_ENVIRONMENTID   = 125435
 
 $Env:SYSTEM_TASKDEFINITIONSURI = "https://dev.azure.com/praxio/"
 $Env:SYSTEM_TEAMPROJECT                 = "f7e1f0f0-eca6-49ed-89c4-b580797f7a63"
 $Env:AGENT_DEPLOYMENTGROUPID            = 540
 $Env:AGENT_MACHINENAME                  = "AAUGUSTO"
-$Env:AGENT_MACHINENAME                  = "BRENOROCHA"
+#$Env:AGENT_MACHINENAME                  = "BRENOROCHA"
 
 $Env:IGNORAR_VALIDAR_BRANCH = $true1
 
-#$Env:AGENT_MACHINENAME                  = "PRXGLBWEB"
-#$Env:AGENT_NAME                         = "PRXGLBWEB"
+$Env:TAG_AGENT_NAME = "alessandro.augusto"
 
 C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\ValidarBranch.ps1
 
