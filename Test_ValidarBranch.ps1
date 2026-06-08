@@ -25,7 +25,7 @@ $Env:AGENT_MACHINENAME                  = "AAUGUSTO"
 
 $Env:IGNORAR_VALIDAR_BRANCH = $true1
 
-$Env:TAG_AGENT_NAME = "alessandro.augusto"
+$Env:GLOBUSWEB_TAG_AGENT_NAME = "alessandro.augusto,zuba1"
 
 C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\ValidarBranch.ps1
 
