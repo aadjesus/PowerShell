@@ -7,5 +7,5 @@ $Env:AGENT_WORKFOLDER = 'c:\azagent\A1\_work'
 $Env:NOME_ARTEFATO    = "GlobusWeb.Acidentes.Front.End"
 $Env:VERSAO_NOVA      = "20260504.1"
 
-C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\FinalizarVersaoInstalada.ps1 -nomeArtefato "GlobusWeb.Acidentes.Front.End"
+& "$($Env:GLOBUSWEB_DEV_PATH)\GlobusWeb.Setup\Scripts\FinalizarVersaoInstalada.ps1" -nomeArtefato "GlobusWeb.Acidentes.Front.End"
 

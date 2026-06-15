@@ -11,4 +11,4 @@ $Env:RELEASE_ARTIFACTS_GLOBUSWEB_ACIDENTES_FRONT_END_BUILDID        = 1
 $Env:FORCAR_ATUALIZACAO = "SIM1"
 $Env:IGNORAR_GLOBUSWEB_ACIDENTES_FRONT_END = "SIM"
 
-C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\VerificaVersaoInstalada.ps1 -NomeArtefato GlobusWeb.Acidentes.Front.End
+& "$($Env:GLOBUSWEB_DEV_PATH)\GlobusWeb.Setup\Scripts\VerificaVersaoInstalada.ps1" -NomeArtefato GlobusWeb.Acidentes.Front.End

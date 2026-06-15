@@ -14,4 +14,4 @@ $Env:PATH_DESTINO     = "c:\Servers\GlobusWeb"
 $Env:IGNORAR_CONEXAO_BANCO = 11
 $Env:IGNORAR_VALIDAR_SISTEMA = 21
 
-C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\ValidarSistemaLiberado.ps1 -sistema 'manutencao'
+& "$($Env:GLOBUSWEB_DEV_PATH)\GlobusWeb.Setup\Scripts\ValidarSistemaLiberado.ps1" -sistema 'manutencao'

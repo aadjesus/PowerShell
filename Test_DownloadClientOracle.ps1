@@ -11,4 +11,4 @@ $Env:AGENT_TEMPDIRECTORY = $ENV:TEMP
 $Env:IGNORAR__ClientOracle            = $True1
 $Env:FORCAR_ATUALIZACAO__ClientOracle = $True1
 
-C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\DownloadClientOracle.ps1
+& "$($Env:GLOBUSWEB_DEV_PATH)\GlobusWeb.Setup\Scripts\DownloadClientOracle.ps1"

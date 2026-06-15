@@ -19,4 +19,4 @@ $Env:IGNORAR_CONEXAO_BANCO           = $true1
 
 $Env:IGNORAR_ATUALIZACAO_AUTOMATICA  = $true1
 
-C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\ValidarConexaoBanco.ps1
+& "$($Env:GLOBUSWEB_DEV_PATH)\GlobusWeb.Setup\Scripts\ValidarConexaoBanco.ps1"

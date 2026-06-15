@@ -1,4 +1,4 @@
 ﻿cls
 $Env:PATH_DESTINO = 'c:\Servers\GlobusWeb'
 
-C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\AtualizarGlobusWebConfigUI.ps1
+& "$($Env:GLOBUSWEB_DEV_PATH)\GlobusWeb.Setup\Scripts\AtualizarGlobusWebConfigUI.ps1"

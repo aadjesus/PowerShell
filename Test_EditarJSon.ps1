@@ -11,7 +11,4 @@
 
 $arquivo = "c:\Servers\GlobusWeb\GlobusWeb.Config.json"
 
-C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\EditarJSon.ps1 -arquivo $arquivo -chave versoes -valor @{"x2"="aaaa---x2"}
-
-
-
+& "$($Env:GLOBUSWEB_DEV_PATH)\GlobusWeb.Setup\Scripts\EditarJSon.ps1" -arquivo $arquivo -chave versoes -valor @{"x2"="aaaa---x2"}

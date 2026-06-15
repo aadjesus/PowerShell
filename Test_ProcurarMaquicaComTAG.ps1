@@ -27,4 +27,4 @@ $Env:IGNORAR_VALIDAR_BRANCH = $true1
 
 $Env:GLOBUSWEB_TAGS = "alessandro.augusto,zuba1"
 
-C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\ProcurarMaquicaComTAG.ps1
+& "$($Env:GLOBUSWEB_DEV_PATH)\Scripts\ProcurarMaquicaComTAG.ps1"

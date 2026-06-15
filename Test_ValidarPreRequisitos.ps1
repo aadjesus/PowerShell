@@ -10,4 +10,4 @@ $Env:FTP_SENHA   = 'Prx##2025'
 $Env:IGNORAR_INSTALACAO_PREREQUISITOS = $null
 $Env:IGNORAR_INSTALACAO_PREREQUISITO_NODEJS = $null
 
-C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\ValidarPreRequisitos.ps1
+& "$($Env:GLOBUSWEB_DEV_PATH)\GlobusWeb.Setup\Scripts\ValidarPreRequisitos.ps1"

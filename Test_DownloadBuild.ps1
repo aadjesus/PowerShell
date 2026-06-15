@@ -12,4 +12,4 @@ $Env:SYSTEM_TEAMPROJECT             = "Desenvolvimento"
 $Env:RELEASE_ARTIFACTS_GLOBUSWEB_FRETAMENTO_BACK_END_BUILDID = "206501"
 
 
-C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\DownloadBuild.ps1 -nomeArtefato "GLOBUSWEB_FRETAMENTO_BACK_END"
+& "$($Env:GLOBUSWEB_DEV_PATH)\GlobusWeb.Setup\Scripts\DownloadBuild.ps1" -nomeArtefato "GLOBUSWEB_FRETAMENTO_BACK_END"

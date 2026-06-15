@@ -1,4 +1,4 @@
 ﻿cls
 
 $Env:PATH_DESTINO = "c:\Servers\GlobusWeb"
-C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\HealthCheck.ps1
+& "$($Env:GLOBUSWEB_DEV_PATH)\GlobusWeb.Setup\Scripts\HealthCheck.ps1"

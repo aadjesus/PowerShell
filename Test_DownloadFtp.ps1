@@ -24,7 +24,7 @@ $arquivos = @(
 
 foreach ($item in $arquivos) {
 
-    C:\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\DownloadFtp.ps1 -nomeZip $item.nomeZip -arquivoDestino1 $item.arquivoDestino
+    & "$($Env:GLOBUSWEB_DEV_PATH)\GlobusWeb.Setup\Scripts\DownloadFtp.ps1" -nomeZip $item.nomeZip -arquivoDestino1 $item.arquivoDestino
     
     $zip = "$($Env:AGENT_TEMPDIRECTORY)\$($item.nomeZip).zip"
     if (Test-Path $zip) {
