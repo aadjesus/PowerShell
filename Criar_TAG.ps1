@@ -67,7 +67,9 @@ foreach ($item in $diretorios) {
 
     try {
         cd $item.FullName
-        
+        if ($item.FullName -match 'GlobusWeb.Abastecimento') {
+            continue;
+        }
         #Write-Host "`nBranch: maste" -ForegroundColor Yellow
         #Exec-Git "git checkout master"
         #Exec-Git "git pull origin master"
@@ -78,23 +80,23 @@ foreach ($item in $diretorios) {
         #
         #Write-Host "`nCriando Branch Release: $RELEASE_NAME" -ForegroundColor Yellow
         #Exec-Git "git flow release start $RELEASE_NAME"
-        #
+        
         #Write-Host "`nCriando TAG: $VERSION" -ForegroundColor Yellow
         #Exec-Git "git tag -a $VERSION -m '$MESSAGE'"        
-        #
+        
         #Write-Host "`nFinalizando Release" -ForegroundColor Yellow
         #$env:GIT_MERGE_AUTOEDIT = "no"
         #Exec-Git "git flow release finish -n $RELEASE_NAME"
         #$env:GIT_MERGE_AUTOEDIT = $null
-        #		
-        #Write-Host "`nEnviando: maste" -ForegroundColor Yellow
-        #Exec-Git "git checkout master"
-        #Exec-Git "git push origin master"
-		#
-        #Write-Host "`nEnviando: develop" -ForegroundColor Yellow
-        #Exec-Git "git checkout develop"
-        #Exec-Git "git push origin develop"
-		#
+        		
+        Write-Host "`nEnviando: maste" -ForegroundColor Yellow
+        Exec-Git "git checkout master"
+        Exec-Git "git push origin master"
+		
+        Write-Host "`nEnviando: develop" -ForegroundColor Yellow
+        Exec-Git "git checkout develop"
+        Exec-Git "git push origin develop"
+		
         #Write-Host "`nEnviando: tags" -ForegroundColor Yellow
         #Exec-Git "git push origin --tags"
         
