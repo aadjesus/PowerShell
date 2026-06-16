@@ -10,9 +10,9 @@ $Env:SYSTEM_TEAMFOUNDATIONSERVERURI = "https://vsrm.dev.azure.com/praxio/"
 
 $Env:SYSTEM_ACCESSTOKEN             = [Environment]::GetEnvironmentVariable("XXXXXXXX", "User")
 $Env:SYSTEM_TEAMPROJECTID           = "Desenvolvimento"
-$Env:RELEASE_ENVIRONMENTNAME        = "Homolo"
-$Env:RELEASE_RELEASEID              = "88704"
-$Env:RELEASE_ENVIRONMENTID          = "127045"
+$Env:RELEASE_ENVIRONMENTNAME        = "QA"
+$Env:RELEASE_RELEASEID              = "88805"
+$Env:RELEASE_ENVIRONMENTID          = "127303"
 $Env:IGNORAR_VALIDAR_BRANCH   = $true
 $Env:ID_DEPLOYMENT_GROUP      = 540
 
