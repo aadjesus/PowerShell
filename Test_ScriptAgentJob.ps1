@@ -1,6 +1,6 @@
 ﻿cls
 
-$Env:BUILD_SOURCEBRANCHNAME         = "complice"
+$Env:BUILD_SOURCEBRANCHNAME         = "develop"
 $Env:SYSTEM_TASKDEFINITIONSURI      = "https://dev.azure.com/praxio/"
 $Env:SYSTEM_TEAMPROJECT             = "f7e1f0f0-eca6-49ed-89c4-b580797f7a63"
 $Env:BUILD_BUILDNUMBER              = "xxxxxx-$($Env:BUILD_SOURCEBRANCHNAME)"
@@ -18,4 +18,4 @@ $Env:ID_DEPLOYMENT_GROUP      = 540
 
 $Env:SYSTEM_PIPELINESTARTTIME = '2026-06-21 11:48:40-03:00'
 
-& "$($Env:GLOBUSWEB_DEV_PATH)\GlobusWeb.Setup\Scripts\ScriptAgentJob.ps1" -tags "GlobusWeb1,complice1"
+& "$($Env:GLOBUSWEB_DEV_PATH)\GlobusWeb.Setup\Scripts\ScriptAgentJob.ps1" #-tags "GlobusWeb"
