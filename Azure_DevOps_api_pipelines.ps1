@@ -10,7 +10,7 @@ $headers        = @{
 
 $Env:SYSTEM_COLLECTIONURI = "https://dev.azure.com/praxio/"
 $Env:SYSTEM_TEAMPROJECT   = "Desenvolvimento" 
-$ENV:PIPELINE_ID_RELEASE  = 909
+$ENV:PIPELINE_ID_RELEASE  = 828
 
 $baseUrl        = "$($ENV:SYSTEM_COLLECTIONURI)$($ENV:SYSTEM_TEAMPROJECT)"
 $uri            = "$($baseUrl)/_apis/pipelines/$($ENV:PIPELINE_ID_RELEASE)/runs?api-version=7.1-preview.1&$top=1"

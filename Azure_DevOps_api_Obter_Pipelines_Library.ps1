@@ -11,4 +11,4 @@ $urlBase = "https://dev.azure.com/praxio/Desenvolvimento/_apis"
 			$response = Invoke-RestMethod -Uri $uri -Method Get -Headers $headers
 
 
-$response.variables
+$response
