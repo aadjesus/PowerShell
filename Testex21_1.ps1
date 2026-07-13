@@ -4,4 +4,6 @@
     [string]$possuiUi = "NAO"
 )
 
-"xxxxxxxxxxxxxxxxxxxxxxx $($nome) - $($versao) - $($possuiUi)"
+Write-Host  "xxxxxxxxxxxxxxxxxxxxxxx $($nome) - $($versao) - $($possuiUi)"
+
+return "ok" 

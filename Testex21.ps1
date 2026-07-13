@@ -1,5 +1,4 @@
 ﻿cls
-
 function Get-Condicao($nome) {
 	$valor = Get-Valor -nome $nome
 	
@@ -42,8 +41,6 @@ function Get-Valor {
     Set-Item -Path "env:RELEASE_ARTIFACTS_GLOBUSWEB_aaaa$($valor)_FRONT_END_BUILDNUMBER"    -Value $valor
 }
 
-$env:RELEASE_ARTIFACTS_GLOBUSWEB_aaaa0001_FRONT_END_DEFINITIONNAME
-
 $regex = "RELEASE_ARTIFACTS_(.*)_(FRONT|BACK)_END_EXECUTAR_TASK"
 $variaveis = Get-ChildItem Env: |
     Where-Object { $_.Name -match $regex -and
@@ -51,45 +48,48 @@ $variaveis = Get-ChildItem Env: |
                    $_.Name -ne "RELEASE_ARTIFACTS_GLOBUSWEB_SETUP" }
 
 $nucleos    = [Environment]::ProcessorCount
-$qtdeGrupos = [Math]::Max([Math]::Min($nucleos, $variaveis.Count), 1)
-
-$qtdeGrupos
-$variaveis.Count
+$qtdeGrupos = [Math]::Min($nucleos, $variaveis.Count)
 
 $modulos = @()
-$indice = 0
+$indice  = 0
 foreach ($item in $variaveis) {
     if ($item.Name -notmatch $regex) {
         continue
     }
-    $indice % $qtdeGrupos
+    $nomeModulo     = "$($Matches[1]).$($Matches[2]).End"
+    $definitionName = Get-Valor -Nome "RELEASE_ARTIFACTS_$($nomeModulo)_END_DEFINITIONNAME"
     $modulos += [PSCustomObject]@{
         Site       = $Matches[1]
         Grupo	   = [Math]::Floor($indice / $qtdeGrupos)
-        Nome       = Get-Valor    -Nome "RELEASE_ARTIFACTS_$($Matches[1])_$($Matches[2])_END_DEFINITIONNAME"
-        VersaoNova = Get-Valor    -Nome "RELEASE_ARTIFACTS_$($Matches[1])_$($Matches[2])_END_BUILDNUMBER"
-        PossuiUi   = Get-Condicao -Nome "RELEASE_ARTIFACTS_$($Matches[1])_$($Matches[2])_END_POSSUI_UI"
+        Nome       = $definitionName    
+        VersaoNova = Get-Valor    -Nome "RELEASE_ARTIFACTS_$($nomeModulo)_END_BUILDNUMBER"
+        PossuiUi   = Get-Condicao -Nome "RELEASE_ARTIFACTS_$($nomeModulo)_END_POSSUI_UI"
+        API        = ([regex]::Match($definitionName, "GlobusWeb\.(.*)\.Back\.End")).Success
     }
     $indice++
 }
 
+$porSite = @($modulos | Group-Object { $_.Grupo })
 
-$porSite    = @($modulos | Group-Object { $_.Grupo })
-$porSite
 
 Write-Host "Nucleos: $nucleos | Grupos paralelos: $qtdeGrupos | Modulos: $($modulos.Count)"
 $jobs = foreach ($chave in $porSite) {
     Start-Job -Name "Grupo-$chave" -ScriptBlock {
-        param ($pasta, $itens)
-        #Start-Sleep -Seconds 5
-        foreach ($modulo in $itens) {
-            & "$pasta\Testex21_1.ps1" -Nome $modulo.Nome -Versao $modulo.VersaoNova -PossuiUi $modulo.PossuiUi
-        }
+        foreach ($modulo in $using:chave.Group) {
+            $retornoScript = & "$using:PSScriptRoot\Testex21_1.ps1" -Nome $modulo.Nome -Versao $modulo.VersaoNova -PossuiUi $modulo.PossuiUi
 
-    } -ArgumentList $PSScriptRoot, $chave.Group
+            [PSCustomObject]@{
+                NomeModulo = $modulo.Nome
+                Grupo      = $modulo.Grupo
+                Resultado  = $retornoScript
+            }
+        }
+    }
 }
 
-Wait-Job -Job $jobs
+Wait-Job -Job $jobs | Out-Null
 $resultados = Receive-Job -Job $jobs
 
-Remove-Job -Job $meusJobs
+Remove-Job -Job $jobs
+
+$resultados | Format-Table -AutoSize
