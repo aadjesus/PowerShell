@@ -9,7 +9,7 @@ $env:PATH_BASE = "c:\Servers"
 
 #& "C:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\VerificaVersoesInstaladas.ps1"
 
-& "C:\Users\alessandro.augusto\Praxio\GlobusWeb\GlobusWeb.Setup\Deploy\CriarAtualizarAplicativos.ps1"
+& "C:\Users\alessandro.augusto\Praxio\GlobusWeb\GlobusWeb.Setup\Deploy\ProcurarAppsParaInstalacao.ps1"
 
 #C:\Users\alessandro.augusto\Praxio\GlobusWeb\GlobusWeb.Setup\Deploy\CriarAtualizarAplicativos.ps1
 
