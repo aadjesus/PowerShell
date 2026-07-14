@@ -5,6 +5,8 @@ $env:RUNTIME_JSONPIPELINES = '[{"name":"GlobusWeb.TransporteRodoviarioDeRiscos.B
 $env:PATH_BASE = "c:\Servers"
 & "C:\Users\alessandro.augusto\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\LerGlobusWebConfigJson.ps1"
 
+$env:PORTA_PARENT_WEBSITE = "80"
+& "C:\Users\alessandro.augusto\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\ProcuraParentWebsite.ps1"
 #& "C:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\ObterPipelines.ps1"
 
 #& "C:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\VerificaVersoesInstaladas.ps1"
