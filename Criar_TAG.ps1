@@ -67,11 +67,11 @@ foreach ($item in $diretorios) {
 
     try {
         cd $item.FullName
-        if ($item.FullName -match 'GlobusWeb.Abastecimento') {
-            continue;
-        }
+        #if ($item.FullName -match 'GlobusWeb.Abastecimento') {
+        #    continue;
+        #}
         #Write-Host "`nBranch: maste" -ForegroundColor Yellow
-        #Exec-Git "git checkout master"
+        Exec-Git "git checkout master"
         #Exec-Git "git pull origin master"
         #
         #Write-Host "`nBranch: develop" -ForegroundColor Yellow
@@ -89,13 +89,13 @@ foreach ($item in $diretorios) {
         #Exec-Git "git flow release finish -n $RELEASE_NAME"
         #$env:GIT_MERGE_AUTOEDIT = $null
         		
-        Write-Host "`nEnviando: maste" -ForegroundColor Yellow
-        Exec-Git "git checkout master"
-        Exec-Git "git push origin master"
+        #Write-Host "`nEnviando: maste" -ForegroundColor Yellow
+        #Exec-Git "git checkout master"
+        #Exec-Git "git push origin master"
 		
-        Write-Host "`nEnviando: develop" -ForegroundColor Yellow
-        Exec-Git "git checkout develop"
-        Exec-Git "git push origin develop"
+        #Write-Host "`nEnviando: develop" -ForegroundColor Yellow
+        #Exec-Git "git checkout develop"
+        #Exec-Git "git push origin develop"
 		
         #Write-Host "`nEnviando: tags" -ForegroundColor Yellow
         #Exec-Git "git push origin --tags"
