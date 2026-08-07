@@ -1,6 +1,7 @@
 ﻿cls
 
 $token          = [Environment]::GetEnvironmentVariable("XXXXXXXX", "User")
+
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(":$token"))
 $headers        = @{ Authorization = "Basic $base64AuthInfo" }
 
@@ -21,3 +22,4 @@ $builds.Count
 #$file = "$(Pipeline.Workspace)/pipelines.json"
 #$json | Out-File $file -Encoding utf8
 
+$token 
