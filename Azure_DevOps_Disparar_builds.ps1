@@ -25,8 +25,11 @@ $pipelines = @($response.value |
 
 Write-Host "$($pipelines.Count): Pipelines declaradas, Branch: $($branchName)`n"
 
+$tasks = @()
 foreach ($item in $pipelines) {
-  Write-Host "Disparando build: $($item.name)"
+  Write-Host "Disparando build: $($item.name) - $($item.id)"
+  
+  $item | ConvertTo-Json -Depth 10
 
   try {
     $body = @{
