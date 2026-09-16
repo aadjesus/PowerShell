@@ -1,7 +1,7 @@
 ﻿cls
 
 $Env:SYSTEM_TEAMFOUNDATIONCOLLECTIONURI = "https://dev.azure.com/praxio/"
-$Env:SYSTEM_TEAMPROJECT                 = "Desenvolvimento" 
+$Env:SYSTEM_TEAMPROJECT                 = "fusea" 
 
 $baseUrl        = "$($Env:SYSTEM_TEAMFOUNDATIONCOLLECTIONURI)$($Env:System_TeamProject)"
 
@@ -16,40 +16,20 @@ $headers        = @{
 
 Write-Host "Procurando Pipelines com prefixo: GlobusWeb.*End"
 
-$uri       = "$baseUrl/_apis/build/definitions?api-version=7.1"
+$uri       = "$baseUrl/_apis/build/builds?statusFilter=completed&resultFilter=succeeded&queryOrder=finishTimeDescending&maxBuildsPerDefinition=1&api-version=7.1"
 $response  = Invoke-RestMethod -Uri $uri -Headers $headers -Method GET
-$pipelines = @($response.value |
-    Where-Object { $_.name -match 'GlobusWeb.*End' } |
-    Select-Object id, name, url |
+
+
+$builds   = ($response.value |  Where-Object { $_.definition.name -match 'GlobusWeb.*End' } )
+$repositorios = @($builds |
+    Group-Object -Property { $_.repository.id } |
+    Select-Object @{Name = "id";        Expression = { $_.Name }},
+                  @{Name = "name";      Expression = { ($_.Group.repository.name | Select-Object          -Unique) }},
+                  @{Name = "pipelines"; Expression = { ($_.Group.definition      | Select-Object name, id -Unique) }} |
     Sort-Object name)
 
-Write-Host "$($pipelines.Count): Pipelines declaradas, Branch: $($branchName)`n"
+$qtde = $repositorios.Count
 
-$tasks = @()
-foreach ($item in $pipelines) {
-  Write-Host "Disparando build: $($item.name) - $($item.id)"
-  
-  $item | ConvertTo-Json -Depth 10
+Write-Host "$($repositorios | ConvertTo-Json -Depth 10)"
 
-  try {
-    $body = @{
-      resources = @{
-        repositories = @{
-          self = @{
-            refName = "$branchName"
-          }
-        }
-      }
-    } | ConvertTo-Json -Depth 10
-
-    
-    #if ($item.name -eq "GlobusWeb.Abastecimento.Back.End") {
-    #    $url = "$baseUrl/_apis/pipelines/$($item.id)/runs?api-version=7.1"
-    #    $response = Invoke-RestMethod -Uri $url -Headers $headers  -Method Post -Body $body
-    #    Write-Host " └── Build: $($response.name)"
-    #}
-
-  } catch {
-      Write-Host " └── Erro: $($_.Exception.Message)"
-  }
-}
+$qtde
