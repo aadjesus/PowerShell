@@ -8,7 +8,7 @@ $Env:SYSTEM_TEAMFOUNDATIONCOLLECTIONURI = "https://dev.azure.com/praxio/"
 $Env:SYSTEM_TEAMPROJECT                 = "Desenvolvimento" 
 
 
-$url1      = "$($env:SYSTEM_TEAMFOUNDATIONCOLLECTIONURI)$($env:SYSTEM_TEAMPROJECT)/_apis/build/retention/leases?definitionId=952&api-version=7.1"
+$url1      = "$($env:SYSTEM_TEAMFOUNDATIONCOLLECTIONURI)$($env:SYSTEM_TEAMPROJECT)/_apis/build/retention/leases?definitionId=823&api-version=7.1"
                                 
                                
 $response = Invoke-RestMethod -Uri $url1 -Method Get -Headers $headers
