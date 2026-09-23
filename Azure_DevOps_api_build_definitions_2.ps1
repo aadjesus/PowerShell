@@ -20,13 +20,13 @@ foreach ($item in $pipelines) {
   Write-Host "Procurando build pipeline: $($item.name)"
   try {
     $uri      = "$baseUrl/latest/$($item.id)?branchName=$branchName&api-version=7.1-preview.1"
-    $response = Invoke-RestMethod -Uri $uri -Headers $headers -Method GET
-
-    $listaPipelines += [PSCustomObject]@{
-        'Pipeline'    = $item.name
-        'BuildID'     = $item.id
-        'BuildNumber' = $response.BuildNumber
-    }
+    #$response = Invoke-RestMethod -Uri $uri -Headers $headers -Method GET
+    #
+    #$listaPipelines += [PSCustomObject]@{
+    #    'Pipeline'    = $item.name
+    #    'BuildID'     = $item.id
+    #    'BuildNumber' = $response.BuildNumber
+    #}
 
     Write-Host " └── Build: $($response.BuildNumber)"
   } catch {
