@@ -1,4 +1,6 @@
-﻿$token          = [Environment]::GetEnvironmentVariable("XXXXXXXX", "User")
+﻿cls
+
+$token          = [Environment]::GetEnvironmentVariable("XXXXXXXX", "User")
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(":$token"))
 $headers        = @{ Authorization = "Basic $base64AuthInfo" }
 
@@ -98,12 +100,12 @@ $body2 = @{
 
 $body2
 
-#$body = $body2
-#$body = [System.Text.Encoding]::UTF8.GetBytes($body)
-#
-#try {
-#  Invoke-RestMethod -Uri $env:TEAMS_WORKFLOW_URL -Method Post -Body $body -ContentType "application/json; charset=utf-8" | Out-Null
-#  Write-Host "Mensagem enviada"
-#} catch {
-#  Write-Host "##[warning]Falha ao enviar mensagem Teams: $($_.Exception.Message)"
-#}
+$body = $body2
+$body = [System.Text.Encoding]::UTF8.GetBytes($body)
+
+try {
+  Invoke-RestMethod -Uri $env:TEAMS_WORKFLOW_URL -Method Post -Body $body -ContentType "application/json; charset=utf-8" | Out-Null
+  Write-Host "Mensagem enviada"
+} catch {
+  Write-Host "##[warning]Falha ao enviar mensagem Teams: $($_.Exception.Message)"
+}

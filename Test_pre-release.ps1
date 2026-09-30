@@ -20,8 +20,9 @@ $Env:RELEASE_ENVIRONMENTID          = "127455"
 $Env:RELEASE_RELEASEID              = "89378"
 $Env:RELEASE_ENVIRONMENTID          = "129168"
 
-$Env:RELEASE_RELEASEID                = 90113
-$Env:RELEASE_ENVIRONMENTID            = 131273
+$Env:RELEASE_RELEASEID                = 93475
+$Env:RELEASE_ENVIRONMENTID            = 143941
+$Env:RELEASE_ATTEMPTNUMBER            = 1
 
 #$Env:RELEASE_RELEASEID                = 90042
 #$Env:RELEASE_ENVIRONMENTID            = 131100
@@ -34,9 +35,9 @@ $Env:SYSTEM_PIPELINESTARTTIME = '2026-09-18 11:48:40-03:00'
 
 
 #& 'c:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\ValidarBranch.ps1'
-#& 'c:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\ObterMachineName.ps1'
+& 'c:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\ObterMachineName.ps1'
 
-$Env:RUNTIME_JSONPIPELINES = $null
-& 'c:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\ObterPipelines.ps1' -tags "GlobusWeb,develop" #$($Env:RUNTIME_BRANCHORIGIN)
+#$Env:RUNTIME_JSONPIPELINES = $null
+#& 'c:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\ObterPipelines.ps1' -tags "GlobusWeb,develop" #$($Env:RUNTIME_BRANCHORIGIN)
 
 #& 'c:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\VerificaVersoesInstaladas.ps1'
