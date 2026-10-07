@@ -45,7 +45,7 @@ try {
     
     $action = New-ScheduledTaskAction `
     	-Execute "powershell.exe" `
-    	-Argument "-WindowStyle Hidden -ExecutionPolicy Bypass -File d:\GitHub\PowerShell\git_commit_arquivo_teste.ps1"
+    	-Argument "-WindowStyle Hidden -ExecutionPolicy Bypass -File d:\GitHub\PowerShell\Agendador_de_tarefas\git_commit_arquivo_teste.ps1"
     
     $settings = New-ScheduledTaskSettingsSet `
         -DeleteExpiredTaskAfter (New-TimeSpan -Seconds 0)
