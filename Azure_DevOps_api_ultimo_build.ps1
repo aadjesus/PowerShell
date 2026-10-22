@@ -13,8 +13,9 @@ $headers        = @{ Authorization = "Basic $base64AuthInfo" }
 $url       = "$org/$project/_apis/build/builds?definitions=$pipelineId&branchName=$branch&queryOrder=finishTimeDescending&api-version=7.1"
 $lastBuild = Invoke-RestMethod -Uri $url -Headers $headers -Method GET
 
-$lastBuild
-$lastBuild.count
+
+$lastBuild |convertto-json -Depth 10
+
 
 #$build     = $lastBuild.value | Select-Object -First 1
 #Write-Host "Último build encontrado: ID $($build.id) - Status: $($build.result)"

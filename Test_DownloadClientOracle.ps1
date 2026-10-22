@@ -6,7 +6,7 @@ $Env:FTP_SENHA   = 'Prx##2025'
 
 
 $Env:AGENT_WORKFOLDER    = "c:\azagent\A1\_work"
-$Env:PATH_DESTINO        = "c:\Servers\GlobusWeb"
+$Env:PATH_DESTINO        = "c:\Servers\GlobusWeb1"
 $Env:AGENT_TEMPDIRECTORY = $ENV:TEMP
 
 $Env:IGNORAR__ClientOracle            = $True1

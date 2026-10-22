@@ -6,7 +6,8 @@ $headers        = @{ Authorization = "Basic $base64AuthInfo" }
 $project    = "desenvolvimento"
 
 $tags = "GlobusWeb,develop"
-$uri  = "https://dev.azure.com/praxio/${project}/_apis/build/builds?tagFilters=$($tags)&statusFilter=completed,partiallySucceeded&resultFilter=succeeded&queryOrder=finishTimeDescending$top=1&api-version=7.1"
+$branch     = "refs/heads/develop"
+$uri  = "https://dev.azure.com/praxio/${project}/_apis/build/builds?branchName=$branch&statusFilter=completed,partiallySucceeded&resultFilter=succeeded&queryOrder=finishTimeDescending$top=1&api-version=7.1"
 
 $dataMaxima = '2026-09-18'
 #$uri  = "https://dev.azure.com/praxio/${project}/_apis/build/builds?tagFilters=$($tags)&statusFilter=completed&resultFilter=succeeded,partiallySucceeded&maxTime=$($dataMaxima)&queryOrder=finishTimeDescending&maxBuildsPerDefinition=1&api-version=7.1
