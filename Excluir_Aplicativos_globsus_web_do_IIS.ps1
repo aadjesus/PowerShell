@@ -16,11 +16,15 @@ $apps | ForEach-Object {
 }
 
 Write-Host "`n=== Application Pools ($($pools.Count)) ===" -ForegroundColor Cyan
-$pools | ForEach-Object { Write-Host ("  {0}  [{1}]" -f $_.Name, $_.State) }
-
+$pools | ForEach-Object { 
+    Write-Host ("  {0}  [{1}]" -f $_.Name, $_.State) 
+}
 
 $resp = Read-Host "`nConfirma a exclusao de $($apps.Count) aplicacao(oes) e $($pools.Count) pool(s)? Digite SIM"
-if ($resp -ne 'SIM') { Write-Host 'Cancelado.'; return }
+if ($resp -ne 'SIM') { 
+    Write-Host 'Cancelado.'; 
+    return 
+}
 
 # 1) Aplicacoes primeiro (pool com apps vinculados nao deve ser removido antes)
 foreach ($a in $apps) {
@@ -28,16 +32,23 @@ foreach ($a in $apps) {
     try {
         Remove-WebApplication -Site $site -Name $a.path.TrimStart('/') -ErrorAction Stop
         Write-Host "App removida: $site$($a.path)" -ForegroundColor Green
-    } catch { Write-Host "ERRO app $site$($a.path): $_" -ForegroundColor Red }
+    } catch { 
+        Write-Host "ERRO app $site$($a.path): $_" -ForegroundColor Red 
+    }
 }
 
 # 2) Pools
 foreach ($p in $pools) {
     try {
-        if ($p.State -eq 'Started') { Stop-WebAppPool -Name $p.Name -ErrorAction SilentlyContinue }
+        if ($p.State -eq 'Started') { 
+            Stop-WebAppPool -Name $p.Name -ErrorAction SilentlyContinue 
+        }
+
         Remove-WebAppPool -Name $p.Name -ErrorAction Stop
         Write-Host "Pool removido: $($p.Name)" -ForegroundColor Green
-    } catch { Write-Host "ERRO pool $($p.Name): $_" -ForegroundColor Red }
+    } catch { 
+        Write-Host "ERRO pool $($p.Name): $_" -ForegroundColor Red 
+    }
 }
 
 Write-Host "`nConcluido." -ForegroundColor Cyan

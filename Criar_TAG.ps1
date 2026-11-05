@@ -47,7 +47,7 @@ Start-Transcript -Path $arquivoLog -Append
 $diretorios = Get-ChildItem -Path . -Directory | 
 	Where-Object { 
 		$_.Name -match 'GlobusWeb.*' -and
-        $_.FullName -notmatch '(UIKit|Tools)' } | 
+        $_.FullName -notmatch '(UIKit|Tools|Comuns.Libraries)' } | 
 	Select-Object FullName 
 
 function Exec-Git {
@@ -67,9 +67,6 @@ foreach ($item in $diretorios) {
 
     try {
         cd $item.FullName
-        if ($item.FullName -match 'GlobusWeb.DVS') {
-            continue;
-        }
         #Write-Host "`nBranch: maste" -ForegroundColor Yellow
         #Exec-Git "git checkout master"
         #Exec-Git "git pull origin master"
@@ -94,8 +91,8 @@ foreach ($item in $diretorios) {
         #Exec-Git "git push origin master"
 		
         #Write-Host "`nEnviando: develop" -ForegroundColor Yellow
-        Exec-Git "git checkout develop"
-        Exec-Git "git push origin develop"
+        #Exec-Git "git checkout develop"
+        #Exec-Git "git push origin develop"
 		
         #Write-Host "`nEnviando: tags" -ForegroundColor Yellow
         #Exec-Git "git push origin --tags"

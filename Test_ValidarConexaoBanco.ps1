@@ -10,7 +10,7 @@ if (-not (Test-Path "$destino\Oracle.ManagedDataAccess.dll")) {
     
 }
 
-$Env:PATH_DESTINO = "c:\Servers\GlobusWeb\"
+$Env:PATH_DESTINO = "d:\Servers\GlobusWeb\"
 $Env:AGENT_NAME = "TESTE_123"
 
 $Env:TESTE_123_IGNORAR_CONEXAO_BANCO           = 0
