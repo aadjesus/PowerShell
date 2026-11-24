@@ -24,6 +24,14 @@ try {
 		/IS `
 		/IT
 
+	# Copia plugins
+	robocopy `
+		"$origem\skills" `
+		"$destino\skills" `
+		/E `
+		/IS `
+		/IT
+
 	Write-Host "Backup concluído."	
 } catch {
     Write-Error "Erro: $_"
