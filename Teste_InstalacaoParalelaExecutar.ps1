@@ -1,0 +1,60 @@
+﻿cls
+
+$Env:BUILD_SOURCEBRANCHNAME         = "master"
+$Env:BUILD_SOURCEBRANCHNAME         = "develop"
+$Env:SYSTEM_TASKDEFINITIONSURI      = "https://dev.azure.com/praxio/"
+$Env:SYSTEM_TEAMPROJECT             = "f7e1f0f0-eca6-49ed-89c4-b580797f7a63"
+$Env:BUILD_BUILDNUMBER              = "aaaaaa-20260926-$($Env:BUILD_SOURCEBRANCHNAME)"
+$Env:AGENT_WORKFOLDER               = "c:\azagent\A1\_work\_praxio"
+
+$Env:SYSTEM_TEAMFOUNDATIONSERVERURI = "https://vsrm.dev.azure.com/praxio/"
+
+
+#$Env:SYSTEM_ACCESSTOKEN             = [Environment]::GetEnvironmentVariable("XXXXXXXX", "User")
+$Env:GLOBUSWEB_PAT                  = [Environment]::GetEnvironmentVariable("XXXXXXXX", "User")
+$Env:SYSTEM_TEAMPROJECTID           = "Desenvolvimento"
+$Env:RELEASE_ENVIRONMENTNAME        = "QA"
+$Env:RELEASE_RELEASEID              = "88856"
+$Env:RELEASE_ENVIRONMENTID          = "127455"
+
+$Env:RELEASE_RELEASEID              = "89378"
+$Env:RELEASE_ENVIRONMENTID          = "129168"
+
+$Env:RELEASE_RELEASEID                = 93475
+$Env:RELEASE_ENVIRONMENTID            = 143941
+$Env:RELEASE_ATTEMPTNUMBER            = 1
+
+#$Env:RELEASE_RELEASEID                = 90042
+#$Env:RELEASE_ENVIRONMENTID            = 131100
+
+
+$Env:IGNORAR_VALIDAR_BRANCH   = $true1
+$Env:ID_DEPLOYMENT_GROUP      = 540
+
+$Env:SYSTEM_PIPELINESTARTTIME = '2026-09-18 11:48:40-03:00'
+$Env:BUILD_BUILDNUMBER = "asdasa-develop"
+
+ #$baseUrl  = "$($Env:SYSTEM_TASKDEFINITIONSURI)$($Env:SYSTEM_TEAMPROJECTID)/_apis/build/builds"
+ #$uri      = "$($baseUrl)/$($Env:BUILD_BUILDID)?api-version=7.1"
+ $Env:BUILD_BUILDID = 231920
+ $Env:BUILD_SOURCEBRANCH = "develop"
+$Env:RUNTIME_JSONPIPELINES = $null
+
+$Env:AGENT_TEMPDIRECTORY = "c:\azagent\A1\_work"
+$Env:AGENT_WORKFOLDER = "c:\azagent\A1\_work"
+$Env:FTP_URL     = 'ftp://atualizacao.praxio.com.br/ftp/GlobusWeb'
+$Env:FTP_USUARIO = 'prxftp'
+$Env:FTP_SENHA   = 'Prx##2025'
+$Env:PORTA_PARENT_WEBSITE = "80"
+$Env:PATH_BASE = 'd:\Servers'
+#$Env:INSTALACAO_MAX_PARALELO = 5
+
+
+& 'c:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\ValidarBranch.ps1'
+& 'c:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\ObterPipelines.ps1' -tags GlobusWeb
+& 'c:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\VerificaVersoesInstaladasNovo.ps1'
+
+& 'C:\Users\alessandro.augusto\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\LerGlobusWebConfigJson.ps1'
+& 'C:\Users\alessandro.augusto\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\ProcuraParentWebsite.ps1'
+
+& 'C:\Users\alessandro.augusto\Praxio\GlobusWeb\GlobusWeb.Setup\Scripts\InstalacaoParalela\Executar.ps1'

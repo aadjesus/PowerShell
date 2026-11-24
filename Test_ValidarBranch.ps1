@@ -26,5 +26,10 @@ $Env:AGENT_MACHINENAME                  = "AAUGUSTO"
 $Env:IGNORAR_VALIDAR_BRANCH = $true1
 
 $Env:GLOBUSWEB_TAG_AGENT_NAME = "alessandro.augusto,zuba1"
+$Env:GLOBUSWEB_PAT = [Environment]::GetEnvironmentVariable("XXXXXXXX", "User")
 
-& "$($Env:GLOBUSWEB_DEV_PATH)\Scripts\ValidarBranch.ps1"
+#& "$($Env:GLOBUSWEB_DEV_PATH)\Scripts\ValidarBranch.ps1"
+$Env:BUILD_BUILDNUMBER = "aaaaa-API"
+$Env:BUILD_BUILDID     = 231327
+
+C:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\ValidarBranch.ps1

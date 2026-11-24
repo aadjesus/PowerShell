@@ -1,13 +1,17 @@
 ﻿cls
 
 $Env:AGENT_WORKFOLDER          = "c:\azagent\A1\_work\"
+$Env:AGENT_TEMPDIRECTORY       = "c:\azagent\A1\_work\"   
 $Env:BUILD_SOURCEBRANCHNAME    = "develop"
 $Env:BUILD_PROJECTNAME         = "Desenvolvimento"
 $Env:SYSTEM_TASKDEFINITIONSURI = "https://dev.azure.com/praxio/"
 $Env:SYSTEM_ACCESSTOKEN        = [Environment]::GetEnvironmentVariable("XXXXXXXX", "User")
 
 #& "$($Env:GLOBUSWEB_DEV_PATH)\GlobusWeb.Setup\Scripts\VerificaVersoesInstaladas.ps1"
-& "C:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\VerificaVersoesInstaladas.ps1"
+#& "C:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\VerificaVersoesInstaladas.ps1"
+& "c:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\ObterPipelines.ps1" -tags "GlobusWeb"
+
+#& "C:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\VerificaVersoesInstaladasNovo.ps1"
 
 #https://dev.azure.com/praxio/Desenvolvimento/_apis/build/builds?tagFilters=GlobusWeb,develop&statusFilter=completed&resultFilter=succeeded&queryOrder=finishTimeDescending=1&api-version=7.1
 #https://dev.azure.com/praxio/Desenvolvimento/_apis/build/builds?tagFilters=GlobusWeb,develop&statusFilter=completed&resultFilter=succeeded&queryOrder=finishTimeDescending=1&api-version=7.1

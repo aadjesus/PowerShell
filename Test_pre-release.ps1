@@ -32,12 +32,14 @@ $Env:IGNORAR_VALIDAR_BRANCH   = $true1
 $Env:ID_DEPLOYMENT_GROUP      = 540
 
 $Env:SYSTEM_PIPELINESTARTTIME = '2026-09-18 11:48:40-03:00'
+$Env:BUILD_BUILDNUMBER = "asdasa-develop"
 
+ #$baseUrl  = "$($Env:SYSTEM_TASKDEFINITIONSURI)$($Env:SYSTEM_TEAMPROJECTID)/_apis/build/builds"
+ #$uri      = "$($baseUrl)/$($Env:BUILD_BUILDID)?api-version=7.1"
+ $Env:BUILD_BUILDID = 231920
+ $Env:BUILD_SOURCEBRANCH = "develop"
+$Env:RUNTIME_JSONPIPELINES = $null
 
-#& 'c:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\ValidarBranch.ps1'
-& 'c:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\ObterMachineName.ps1'
-
-#$Env:RUNTIME_JSONPIPELINES = $null
-#& 'c:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\ObterPipelines.ps1' -tags "GlobusWeb,develop" #$($Env:RUNTIME_BRANCHORIGIN)
-
-#& 'c:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\VerificaVersoesInstaladas.ps1'
+& 'c:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\ValidarBranch.ps1'
+& 'c:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\ObterPipelines.ps1' -tags "GlobusWeb" #$($Env:RUNTIME_BRANCHORIGIN)
+& 'c:\Users\alessandro.augusto\Praxio\Praxio.Tools.Deploy\Modules\pre-release\VerificaVersoesInstaladasNovo.ps1'
